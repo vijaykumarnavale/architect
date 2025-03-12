@@ -95,16 +95,16 @@ const FileUploadAndDisplay = () => {
         <table className="w-full mt-4 border border-gray-300 rounded-lg shadow-md">
           <thead>
             <tr className="bg-gray-200 text-gray-700">
-              <th className="p-3">File ID</th>
+              <th className="p-3">#</th> {/* Column for sequence numbers */}
               <th className="p-3">Filename</th>
               <th className="p-3">View</th>
               <th className="p-3">Action</th>
             </tr>
           </thead>
           <tbody>
-            {files.map((file) => (
+            {files.map((file, index) => (
               <tr key={file.id} className="border-t hover:bg-gray-100">
-                <td className="p-3 text-center">{file.id}</td>
+                <td className="p-3 text-center">{index + 1}</td> {/* Display sequence number */}
                 <td className="p-3 text-center text-gray-700">{file.filename}</td>
                 <td className="p-3 text-center">
                   <a href={`${apiBaseUrl}${file.file_path}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
